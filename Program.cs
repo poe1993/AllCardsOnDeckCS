@@ -35,10 +35,6 @@ namespace AllCardsOnDeckCS
                 deck[leftIndex] = leftCard;
                 var topCard = rightCard;
                 var nextCard = leftCard;
-                if (rightIndex == 50)
-                {
-                    break;
-                }
 
 
                 Console.WriteLine("Topcard:{0}", topCard);
@@ -49,7 +45,6 @@ namespace AllCardsOnDeckCS
                 playerHand.Add(nextCard);
                 Console.WriteLine("player dealt:{0},{1}", topCard, nextCard);
             }
-
         }
     }
 }
