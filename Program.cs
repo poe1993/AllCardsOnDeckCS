@@ -8,7 +8,7 @@ namespace AllCardsOnDeckCS
         static void Main(string[] args)
         {
             var deck = new List<string>()
-        {
+            {
         "Ace of Spades","Ace of Hearts","Ace of Clubs","Ace of Diamonds",
         "Two of Spades","Two of Hearts","Two of Clubs","Two of Diamonds",
         "Three of Spades","Three of Hearts","Three of clubs","Three of Diamonds",
@@ -22,29 +22,30 @@ namespace AllCardsOnDeckCS
         "Jack of Spades", "Jack of Hearts", "Jack of Clubs", "Jack of Diamonds",
         "Queen of Spades", "Queen of Hearts", "Queen of Clubs", "Queen of Diamonds",
         "King of Spades","King of Hearts","King of Clubs","King of Diamonds"
-      };
+             };
             var n = deck.Count;
             var random = new Random();
 
             for (int rightIndex = n - 1; rightIndex > 1; rightIndex--)
             {
-                int leftIndex = random.Next(rightIndex - 1);
+
+
+                int leftIndex = random.Next(rightIndex);
                 var leftCard = deck[rightIndex];
                 var rightCard = deck[leftIndex];
                 deck[rightIndex] = rightCard;
                 deck[leftIndex] = leftCard;
-                var topCard = rightCard;
-                var nextCard = leftCard;
 
-
-                Console.WriteLine("Topcard:{0}", topCard);
-                Console.WriteLine("Nextcard:{0}", nextCard);
-
-                var playerHand = new List<string>();
-                playerHand.Add(topCard);
-                playerHand.Add(nextCard);
-                Console.WriteLine("player dealt:{0},{1}", topCard, nextCard);
             }
+
+            var topCard = deck[0];
+            var nextCard = deck[1];
+            Console.WriteLine($"Your top card is {topCard}");
+            Console.WriteLine($"Your next card is {nextCard}");
+            var playerHand = new List<string>();
+            playerHand.Add(topCard);
+            playerHand.Add(nextCard);
+            Console.WriteLine("player dealt:{0},{1}", topCard, nextCard);
         }
     }
 }
